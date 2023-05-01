@@ -1,0 +1,496 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipToPadding="false"
+    android:overScrollMode="never"
+    android:scrollbars="none"
+    android:background="@color/gray_100"
+    tools:context=".activities.InfoChatActivity">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageBack"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:background="@drawable/ic_back"
+            android:padding="@dimen/_6sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:tint="@color/colorPrimary"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/textViewConversationName"
+            android:text="@string/conversation_name"
+            android:textSize="@dimen/_15ssp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_marginVertical="@dimen/_15ssp"
+            app:layout_constraintTop_toBottomOf="@id/imageProfile"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:layout_width="@dimen/_90sdp"
+            android:layout_height="@dimen/_90sdp"
+            android:id="@+id/imageProfile"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:background="@drawable/ic_telegram"
+            android:scaleType="centerCrop"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imageBack"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:riv_corner_radius="@dimen/_50sdp"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:visibility="visible"
+            android:id="@+id/imageChangeImage"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:background="@drawable/ic_camera"
+            android:padding="@dimen/_6sdp"
+            android:tint="@color/black"
+            app:layout_constraintEnd_toEndOf="@id/imageProfile"
+            app:layout_constraintBottom_toBottomOf="@id/imageProfile"/>
+
+        <TextView
+            android:id="@+id/textName"
+            android:text=""
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxLines="1"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_20sdp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/imageProfile"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+        <LinearLayout
+            android:id="@+id/layout_custom"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="@dimen/_15sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textName">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:padding="@dimen/_8sdp"
+                android:text="@string/customization"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_15ssp" />
+
+            <LinearLayout
+                android:id="@+id/buttonBackground"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_content_top"
+                android:orientation="horizontal"
+                android:paddingHorizontal="@dimen/_5sdp"
+                android:paddingTop="@dimen/_8ssp"
+                android:paddingBottom="@dimen/_8sdp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:background="@drawable/ic_round"
+                    android:tint="@color/blue" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:text="@string/theme"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_18sdp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/buttonQuickEmotions"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:paddingHorizontal="@dimen/_5sdp"
+                android:paddingTop="@dimen/_8ssp"
+                android:paddingBottom="@dimen/_8sdp">
+
+                <TextView
+                    android:id="@+id/textViewEmoji"
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:text="@string/text_detail"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_20sdp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:text="@string/quick_emotions"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_18sdp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/buttonNickname"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:paddingHorizontal="@dimen/_5sdp"
+                android:paddingTop="@dimen/_8ssp"
+                android:paddingBottom="@dimen/_8sdp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:background="@drawable/ic_nickname"
+                    android:tint="@color/blue" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:text="@string/nicknames"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_18sdp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/buttonWordEffects"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_content_bottom"
+                android:orientation="horizontal"
+                android:paddingHorizontal="@dimen/_5sdp"
+                android:paddingTop="@dimen/_8ssp"
+                android:paddingBottom="@dimen/_8sdp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:background="@drawable/ic_effect"
+                    android:tint="@color/blue" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:text="@string/word_effects"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_18sdp" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_infoChat"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="@dimen/_15sdp"
+            app:layout_constraintTop_toBottomOf="@id/layout_custom"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+            <TextView
+                android:layout_marginStart="@dimen/_8sdp"
+                android:padding="@dimen/_8sdp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/info_chat"
+                android:textSize="@dimen/_15ssp"
+                android:textColor="@color/black"
+                />
+
+            <LinearLayout
+                android:id="@+id/buttonSeeGroupMember"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:background="@drawable/bg_content"
+                android:paddingTop="@dimen/_8ssp"
+                android:paddingHorizontal="@dimen/_5sdp"
+                android:paddingBottom="@dimen/_8sdp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageSeeGroupMember"
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:background="@drawable/ic_groups"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:tint="@color/blue"/>
+                <TextView
+                    android:id="@+id/textSeeGroupMember"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/see_group_members"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_18sdp"
+                    android:layout_marginTop="@dimen/_4sdp"/>
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/layout_moveAction"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="@dimen/_15sdp"
+            app:layout_constraintTop_toBottomOf="@id/layout_infoChat"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+            <TextView
+                android:layout_marginStart="@dimen/_8sdp"
+                android:padding="@dimen/_8sdp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/move_action"
+                android:textSize="@dimen/_15ssp"
+                android:textColor="@color/black"
+                />
+
+            <LinearLayout
+                android:id="@+id/buttonCreateGroupChat"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:background="@drawable/bg_content_top"
+                android:paddingTop="@dimen/_8ssp"
+                android:paddingHorizontal="@dimen/_5sdp"
+                android:paddingBottom="@dimen/_8sdp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageCreateGroup"
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:background="@drawable/ic_groups"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:tint="@color/blue"/>
+                <TextView
+                    android:id="@+id/textCreateGroup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/create_a_chat_group"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_18sdp"
+                    android:layout_marginTop="@dimen/_4sdp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/buttonSearchInConversation"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:background="@color/white"
+                android:paddingTop="@dimen/_8ssp"
+                android:paddingHorizontal="@dimen/_5sdp"
+                android:paddingBottom="@dimen/_8sdp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageSearchInConversation"
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:background="@drawable/ic_search"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:tint="@color/blue"/>
+                <TextView
+                    android:id="@+id/textSearchInConversation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/search_in_conversation"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_18sdp"
+                    android:layout_marginTop="@dimen/_4sdp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/button1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:background="@drawable/bg_content_bottom"
+                android:paddingTop="@dimen/_8ssp"
+                android:paddingHorizontal="@dimen/_5sdp"
+                android:paddingBottom="@dimen/_8sdp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/image1"
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:background="@drawable/ic_notifications"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:tint="@color/blue"/>
+                <TextView
+                    android:id="@+id/text1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/notification_and_sounds"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_18sdp"
+                    android:layout_marginTop="@dimen/_4sdp"/>
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="@dimen/_15sdp"
+            app:layout_constraintTop_toBottomOf="@id/layout_moveAction"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+            <TextView
+                android:layout_marginStart="@dimen/_8sdp"
+                android:padding="@dimen/_8sdp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/privacy_and_support"
+                android:textSize="@dimen/_15ssp"
+                android:textColor="@color/black"
+                />
+            <LinearLayout
+                android:id="@+id/buttonRestrict"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:background="@drawable/bg_content_top"
+                android:paddingTop="@dimen/_8ssp"
+                android:paddingHorizontal="@dimen/_5sdp"
+                android:paddingBottom="@dimen/_8sdp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageRestrict"
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:background="@drawable/ic_restrict"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:tint="@color/blue"/>
+                <TextView
+                    android:id="@+id/textRestrict"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/restrict"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_18sdp"
+                    android:layout_marginTop="@dimen/_4sdp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/buttonBlock"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:background="@color/white"
+                android:paddingTop="@dimen/_8ssp"
+                android:paddingHorizontal="@dimen/_5sdp"
+                android:paddingBottom="@dimen/_8sdp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageBlock"
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:background="@drawable/ic_road"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:tint="@color/blue"/>
+                <TextView
+                    android:id="@+id/textBlock"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/block"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_18sdp"
+                    android:layout_marginTop="@dimen/_4sdp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/buttonDeleteChat"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:background="@drawable/bg_content_bottom"
+                android:paddingTop="@dimen/_8ssp"
+                android:paddingHorizontal="@dimen/_5sdp"
+                android:paddingBottom="@dimen/_8sdp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageDelete"
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:background="@drawable/ic_delete"
+                    android:backgroundTint="@color/error"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:tint="@color/blue"/>
+                <TextView
+                    android:id="@+id/textDelete"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/delete_chat"
+                    android:textColor="@color/error"
+                    android:textSize="@dimen/_18sdp"
+                    android:layout_marginTop="@dimen/_4sdp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/buttonLeaveConversation"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:background="@drawable/bg_content"
+                android:paddingTop="@dimen/_8ssp"
+                android:paddingHorizontal="@dimen/_5sdp"
+                android:paddingBottom="@dimen/_8sdp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageLeaveConversation"
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:background="@drawable/ic_leave"
+                    android:backgroundTint="@color/error"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:tint="@color/blue"/>
+                <TextView
+                    android:id="@+id/textLeaveConversation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/leave_the_conversation"
+                    android:textColor="@color/error"
+                    android:textSize="@dimen/_18sdp"
+                    android:layout_marginTop="@dimen/_4sdp"/>
+            </LinearLayout>
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
