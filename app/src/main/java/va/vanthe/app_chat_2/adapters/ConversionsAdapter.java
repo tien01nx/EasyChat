@@ -114,7 +114,7 @@ public class ConversionsAdapter extends RecyclerView.Adapter<ConversionsAdapter.
     //                timer.schedule(timerTask, 60000, 60000); // Cập nhật sau 1 phút, lặp lại sau mỗi 1 phút
 
                     binding.getRoot().setOnClickListener(view -> {
-                        Intent intent = new Intent(view.getContext(), ChatMessageActivity3.class);
+                        Intent intent = new Intent(view.getContext(), ChatMessage2Activity.class);
                         intent.putExtra(Constants.KEY_USER, user);
                         intent.putExtra(Constants.KEY_CONVERSATION, conversation);
                         intent.putExtra(Constants.KEY_CONVERSATION_ID, conversation.getId());
@@ -139,7 +139,7 @@ public class ConversionsAdapter extends RecyclerView.Adapter<ConversionsAdapter.
                 Date dateOld = conversation.getMessageTime();
                 updateTime(textViewTimeAgo, dateOld);
                 binding.getRoot().setOnClickListener(view -> {
-                    Intent intent = new Intent(view.getContext(), ChatMessageActivity3.class);
+                    Intent intent = new Intent(view.getContext(), ChatMessage2Activity.class);
                     intent.putExtra(Constants.KEY_CONVERSATION, conversation);
                     intent.putExtra(Constants.KEY_TYPE, Constants.KEY_TYPE_CHAT_GROUP);
                     view.getContext().startActivity(intent);
